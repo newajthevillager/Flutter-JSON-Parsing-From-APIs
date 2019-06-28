@@ -1,0 +1,12 @@
+[
+    {
+        "index" : 1,
+        "title" : "JSON placeholder",
+        "url" : "https://jsonplaceholder.typicode.com"
+    },
+    {
+        "index" : 2,
+        "title" : "Random User",
+        "url" : "https://randomuser.me"
+    }
+]
