@@ -27,18 +27,18 @@ class RandomUsers {
 }
 
 class Results {
-  String gender; //
-  Name name; //
-  Location location; //
-  String email; //
-  Login login; //
-  Dob dob; //
+  String gender; 
+  Name name; 
+  Location location; 
+  String email; 
+  Login login; 
+  Dob dob; 
   Registered registered;
-  String phone; //
+  String phone; 
   String cell;
   Id id;
   Picture picture;
-  String nat; //
+  String nat; 
 
   Results(
       {this.gender,

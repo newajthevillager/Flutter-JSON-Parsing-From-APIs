@@ -8,5 +8,15 @@
         "index" : 2,
         "title" : "Random User",
         "url" : "https://randomuser.me"
+    },
+    {
+        "index" : 3,
+        "title" : "City Bike",
+        "url" : "http://api.citybik.es/v2"
+    },
+    {
+        "index" : 4,
+        "title" : "Pokemon",
+        "url" : "Pokemon GO"
     }
 ]

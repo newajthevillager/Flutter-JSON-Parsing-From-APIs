@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:parse_json_all/model/api_list_model.dart';
 import 'package:parse_json_all/services/api_list_service.dart';
+import 'package:parse_json_all/services/city_bike_service.dart';
+import 'package:parse_json_all/services/pokmon_service.dart';
 import 'package:parse_json_all/ui/api_endpoints/api_endpoints_page.dart';
 
 void main() => runApp(MyApp());
@@ -11,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.teal,
+        primarySwatch: Colors.teal
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -28,16 +30,25 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: FutureBuilder(
+      body: FutureBuilder<ApiList>(
+        initialData: null,
         future: getApiList(),
         builder: (ctx, snap) {
-          return ListView.separated(
+          if (snap.connectionState == ConnectionState.done) {
+            return ListView.separated(
             itemCount: snap.data.apiList.length,
             separatorBuilder: (ctx, index) => Divider(
                   color: Colors.green,
@@ -63,6 +74,11 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
           );
+          } else {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
         },
       ),
     );
