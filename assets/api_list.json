@@ -18,5 +18,10 @@
         "index" : 4,
         "title" : "Pokemon",
         "url" : "Pokemon GO"
+    },
+    {
+        "index" : 5,
+        "title" : "Swapi",
+        "url" : "https://swapi.co/api"
     }
 ]

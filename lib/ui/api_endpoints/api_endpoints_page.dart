@@ -3,6 +3,7 @@ import 'package:parse_json_all/ui/city_bike/city_bike_ui.dart';
 import 'package:parse_json_all/ui/json_placeholder/json_placeholder_uiiii.dart';
 import 'package:parse_json_all/ui/pokemon/pokemon_ui.dart';
 import 'package:parse_json_all/ui/random_user/random_user_ui.dart';
+import 'package:parse_json_all/ui/swapi/swapi_end_points_ui.dart';
 
 class ApiEndpointsPage extends StatefulWidget {
   final String appBarTitle;
@@ -34,6 +35,8 @@ class _ApiEndpointsPageState extends State<ApiEndpointsPage> {
         return CityBikeUi();
       case "Pokemon":
         return PokemonUi();
+      case "Swapi":
+        return SwapiEndPointsUi();
     }
   }
 }
