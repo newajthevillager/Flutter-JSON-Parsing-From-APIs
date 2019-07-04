@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:parse_json_all/services/swapi_service.dart';
 import 'package:parse_json_all/ui/swapi/swapi_people_list_ui.dart';
+import 'package:parse_json_all/ui/swapi/swapi_planets_list_ui.dart';
 
 class SwapiEndPointsUi extends StatelessWidget {
   @override
@@ -24,6 +25,11 @@ class SwapiEndPointsUi extends StatelessWidget {
                 ListTile(
                   title: Text("Planets"),
                   subtitle: Text(snap.data.planets),
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) => SwapiPlanetsListUi()
+                    ));
+                  },
                 ),
                 ListTile(
                   title: Text("Films"),
