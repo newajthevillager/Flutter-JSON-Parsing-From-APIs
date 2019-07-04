@@ -3,6 +3,7 @@ import 'package:parse_json_all/model/api_list_model.dart';
 import 'package:parse_json_all/services/api_list_service.dart';
 import 'package:parse_json_all/services/city_bike_service.dart';
 import 'package:parse_json_all/services/pokmon_service.dart';
+import 'package:parse_json_all/services/swapi_service.dart';
 import 'package:parse_json_all/ui/api_endpoints/api_endpoints_page.dart';
 
 void main() => runApp(MyApp());
@@ -35,6 +36,8 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    print("Hello here");
+    getSwapiPeople();
   }
 
   @override

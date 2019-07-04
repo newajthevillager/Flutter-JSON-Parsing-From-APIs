@@ -1,10 +1,11 @@
-import 'package:http/http.dart'as http;
+import 'package:flutter/widgets.dart';
+import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:parse_json_all/model/swapi/swapi_end_points_model.dart';
 import 'package:parse_json_all/model/swapi/swapi_people_model.dart';
 
 String baseUrl = "https://swapi.co/api";
-String peopleUrl = "";
+String peopleUrl = "https://swapi.co/api/people";
 
 Future<SwapiEndPoints> getSwapiEndPoints() async {
   var response = await http.get(baseUrl);
