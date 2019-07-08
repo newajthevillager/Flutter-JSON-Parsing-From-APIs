@@ -4,6 +4,7 @@ import 'package:parse_json_all/ui/swapi/swapi_films_list_ui.dart';
 import 'package:parse_json_all/ui/swapi/swapi_people_list_ui.dart';
 import 'package:parse_json_all/ui/swapi/swapi_planets_list_ui.dart';
 import 'package:parse_json_all/ui/swapi/swapi_species_list_ui.dart';
+import 'package:parse_json_all/ui/swapi/swapi_star_ships_list_ui.dart';
 import 'package:parse_json_all/ui/swapi/swapi_vehicles_list_ui.dart';
 
 class SwapiEndPointsUi extends StatelessWidget {
@@ -64,6 +65,11 @@ class SwapiEndPointsUi extends StatelessWidget {
                 ListTile(
                   title: Text("Starships"),
                   subtitle: Text(snap.data.starships),
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) => SwapiStarShipsListUi()
+                    ));
+                  },
                 )
               ],
             );

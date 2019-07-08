@@ -5,6 +5,8 @@ import 'package:parse_json_all/model/swapi/swapi_films_model.dart';
 import 'package:parse_json_all/model/swapi/swapi_people_model.dart';
 import 'package:parse_json_all/model/swapi/swapi_planets_model.dart';
 import 'package:parse_json_all/model/swapi/swapi_species_model.dart';
+import 'package:parse_json_all/model/swapi/swapi_startships_model.dart';
+import 'package:parse_json_all/model/swapi/swapi_startships_model.dart' as prefix0;
 import 'package:parse_json_all/model/swapi/swapi_vehicles_model.dart';
 
 String baseUrl = "https://swapi.co/api";
@@ -13,6 +15,7 @@ String planetsUrl = "https://swapi.co/api/planets";
 String filmsUrl = "https://swapi.co/api/films";
 String speciesUrl = "https://swapi.co/api/species";
 String vehiclesUrl = "https://swapi.co/api/vehicles";
+String starShipsUrl = "https://swapi.co/api/starships";
 
 Future<SwapiEndPoints> getSwapiEndPoints() async {
   var response = await http.get(baseUrl);
@@ -54,4 +57,19 @@ Future<SwapiVehiclesList> getSwapiVehicles() async {
   var jsonRes = json.decode(response.body);
   SwapiVehiclesList swapiVehiclesList = SwapiVehiclesList.fromJson(jsonRes);
   return swapiVehiclesList;
+}
+
+Future<SwapiStarShipsList> getStartShips() async {
+  var response = await http.get(starShipsUrl);
+  var jsonRes = json.decode(response.body);
+  SwapiStarShipsList swapiStarShipsList = SwapiStarShipsList.fromJson(jsonRes);
+  return swapiStarShipsList;
+}
+
+Stream<prefix0.Results> getSwapiShipsStream() async* {
+  var response = await http.get(starShipsUrl);
+  var jsonRes = json.decode(response.body);
+  SwapiStarShipsList swapiStarShipsList = SwapiStarShipsList.fromJson(jsonRes);
+  List<prefix0.Results> list = swapiStarShipsList.results;
+  
 }
